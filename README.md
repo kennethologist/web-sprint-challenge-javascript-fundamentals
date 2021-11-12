@@ -24,15 +24,31 @@ Demonstrate your understanding of this week's concepts by answering the followin
 
 Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read.
 
-1. Explain the differences between `.map`, `.reduce` and `.filter` and describe a use case for each. 
+1. Explain the differences between `.map`, `.reduce` and `.filter` and describe a use case for each.
+.map allows you to transfer the array by performing some function on each element and returns a new array.
+.reduce allows you to perform a function on each element of the and returns a single value.
+.filter allows you to filter array elements by some criteria (a boolean result) based on a function and returns the resultant items from the array.
+Use cases
+.map : With an array of numbers you can triple each element by using .map (element)=> { return element * 3;}
+.reduce: With an array of numbers you can get the sum of the elements by .reduce (prev, current) => prev + current;
+.filter: With an array of numbers you can return the numbers that are higher than some threshold by .filter (element) => { element > 2};
+
 
 2. Explain the difference between a callback and a higher order function.
+A callback function is a function that's passed to a high order function (HOF) to be called within the (HOF).
+A higher order function receives another function as an argument.
 
 3. Explain what a closure is.
+Is closure is when an inner function access the variables/data from out of its scope from an outer function.
 
 4. Describe the four principles of the 'this' keyword.
+Window binding - Applies when no context is given to the 'this' keyword so it's binded to the window or global object.
+Implicit binding - Applies when 'this' is binded to the object that calls the function i.e. the object to the left of the . becomes 'this'.
+Explicit binding - Applies when we explicitly provide context to 'this' by using .call, .apply or .bind. .call will immediately invoke the function, .apply will invoke function and pass arguments as an array. .bind passes in argument 1 by 1 and returns a new function that can be invoked when needed.
+New binding - Applies when we use the new keyword the 'this' keyword inside that function is bound to the new object being constructed. 
 
 5. Why do we need super() in an extended class?
+We need this to call populate the attributes/properties of the parent class which will be inherited in the child (extended class).
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade. 
 
