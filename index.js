@@ -16,7 +16,7 @@ function myFunction() {
 myFunction();
 
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
-
+// The variable can be accessed by the inner function due to Closure which allows inner functions to access/reach outside variables.
 
 
 
@@ -28,9 +28,14 @@ myFunction();
     
 For example, `summation(4)` should return 10 because 1+2+3+4 is 10. Note, you may use a for loop for this function if you wish */
 
-function summation(/*Your Code Here*/) {
-  /*Your Code Here*/
+function summation(numToSum) {
+  let sum = 0
+    for (let counter = 1; counter <= numToSum; counter++) {
+      sum += counter;
 
+    }
+
+    return sum;
   }
  
 
@@ -56,8 +61,14 @@ const zooAnimals = [
   displayNames will be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */
 
-  function animalNames(/*Your Code Here*/){
-    /*Your Code Here*/
+  function animalNames(animals){
+    const displayNames = [];
+
+    animals.forEach((element) => {
+      displayNames.push(`name: ${element.animal_name}, scientific: ${element.scientific_name}`);
+    });
+
+    return displayNames;
   }
   
 
@@ -67,8 +78,13 @@ const zooAnimals = [
   For example: ['jackal, asiatic', .....]
   */
 
-  function lowerCaseNames(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowerCaseNames(animals){
+    let lowerAnimalNames = [];
+
+    lowerAnimalNames = animals.map((element) => {return element.animal_name.toLowerCase()});
+
+    return lowerAnimalNames;
+
   }
   
   
@@ -77,8 +93,14 @@ const zooAnimals = [
   Using lowPopulationAnimals use .filter() to create a new array of objects which contains only the animals with a population of less than 5.
   */
 
-  function lowPopulationAnimals(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowPopulationAnimals(animals){
+    let smallPopulation = [];
+
+    smallPopulation = animals.filter((element) => {
+      return element.population < 5;
+    })
+
+    return smallPopulation;
   }
   
 
@@ -88,9 +110,17 @@ const zooAnimals = [
   Remember the reduce method takes two arguments: a callback (which itself takes two args - the accumulator and the item), and an initial value for the count.
   */
 
-  function USApop(/*Your Code Here*/){
-    /*Your Code Here*/
+  function USApop(animals){
+    let sum = 0;
+
+    sum = animals.reduce((accum, item) => {
+      accum + item.population;
+    }, 0);
+  
+    return sum;
   }
+
+  console.log(USApop(zooAnimals));
   
   
   // 🦁🦁🦁 Callbacks 🦁🦁🦁  
